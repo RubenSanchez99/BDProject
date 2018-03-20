@@ -1,0 +1,175 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="ProyectoModelStoreContainer" CdmEntityContainer="ProyectoEntities">
+    <EntitySetMapping Name="Countries">
+      <EntityTypeMapping TypeName="ProyectoModel.Country">
+        <MappingFragment StoreEntitySet="Countries">
+          <ScalarProperty Name="country_id" ColumnName="country_id" />
+          <ScalarProperty Name="country_name" ColumnName="country_name" />
+          <ScalarProperty Name="region_id" ColumnName="region_id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Customers">
+      <EntityTypeMapping TypeName="ProyectoModel.Customer">
+        <MappingFragment StoreEntitySet="Customers">
+          <ScalarProperty Name="customer_id" ColumnName="customer_id" />
+          <ScalarProperty Name="cust_first_name" ColumnName="cust_first_name" />
+          <ScalarProperty Name="cust_last_name" ColumnName="cust_last_name" />
+          <ScalarProperty Name="cust_address" ColumnName="cust_address" />
+          <ScalarProperty Name="phone_number" ColumnName="phone_number" />
+          <ScalarProperty Name="nls_language" ColumnName="nls_language" />
+          <ScalarProperty Name="nls_territory" ColumnName="nls_territory" />
+          <ScalarProperty Name="credit_limit" ColumnName="credit_limit" />
+          <ScalarProperty Name="cust_email" ColumnName="cust_email" />
+          <ScalarProperty Name="account_mgr_id" ColumnName="account_mgr_id" />
+          <ScalarProperty Name="cust_geo_location" ColumnName="cust_geo_location" />
+          <ScalarProperty Name="date_of_birth" ColumnName="date_of_birth" />
+          <ScalarProperty Name="marital_status" ColumnName="marital_status" />
+          <ScalarProperty Name="gender" ColumnName="gender" />
+          <ScalarProperty Name="income_level" ColumnName="income_level" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Departments">
+      <EntityTypeMapping TypeName="ProyectoModel.Department">
+        <MappingFragment StoreEntitySet="Departments">
+          <ScalarProperty Name="department_id" ColumnName="department_id" />
+          <ScalarProperty Name="department_name" ColumnName="department_name" />
+          <ScalarProperty Name="manager_id" ColumnName="manager_id" />
+          <ScalarProperty Name="location_id" ColumnName="location_id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Employees">
+      <EntityTypeMapping TypeName="ProyectoModel.Employee">
+        <MappingFragment StoreEntitySet="Employees">
+          <ScalarProperty Name="employee_id" ColumnName="employee_id" />
+          <ScalarProperty Name="first_name" ColumnName="first_name" />
+          <ScalarProperty Name="last_name" ColumnName="last_name" />
+          <ScalarProperty Name="email" ColumnName="email" />
+          <ScalarProperty Name="phone_number" ColumnName="phone_number" />
+          <ScalarProperty Name="hire_date" ColumnName="hire_date" />
+          <ScalarProperty Name="job_id" ColumnName="job_id" />
+          <ScalarProperty Name="salary" ColumnName="salary" />
+          <ScalarProperty Name="commission_pct" ColumnName="commission_pct" />
+          <ScalarProperty Name="manager_id" ColumnName="manager_id" />
+          <ScalarProperty Name="department_id" ColumnName="department_id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Inventories">
+      <EntityTypeMapping TypeName="ProyectoModel.Inventory">
+        <MappingFragment StoreEntitySet="Inventories">
+          <ScalarProperty Name="product_id" ColumnName="product_id" />
+          <ScalarProperty Name="warehouse_id" ColumnName="warehouse_id" />
+          <ScalarProperty Name="quantity_on_hand" ColumnName="quantity_on_hand" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="JobHistories">
+      <EntityTypeMapping TypeName="ProyectoModel.JobHistory">
+        <MappingFragment StoreEntitySet="JobHistory">
+          <ScalarProperty Name="employee_id" ColumnName="employee_id" />
+          <ScalarProperty Name="start_date" ColumnName="start_date" />
+          <ScalarProperty Name="end_date" ColumnName="end_date" />
+          <ScalarProperty Name="job_id" ColumnName="job_id" />
+          <ScalarProperty Name="department_id" ColumnName="department_id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Jobs">
+      <EntityTypeMapping TypeName="ProyectoModel.Job">
+        <MappingFragment StoreEntitySet="Jobs">
+          <ScalarProperty Name="job_id" ColumnName="job_id" />
+          <ScalarProperty Name="job_title" ColumnName="job_title" />
+          <ScalarProperty Name="min_salary" ColumnName="min_salary" />
+          <ScalarProperty Name="max_salary" ColumnName="max_salary" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Locations">
+      <EntityTypeMapping TypeName="ProyectoModel.Location">
+        <MappingFragment StoreEntitySet="Locations">
+          <ScalarProperty Name="location_id" ColumnName="location_id" />
+          <ScalarProperty Name="street_address" ColumnName="street_address" />
+          <ScalarProperty Name="postal_code" ColumnName="postal_code" />
+          <ScalarProperty Name="city" ColumnName="city" />
+          <ScalarProperty Name="state_province" ColumnName="state_province" />
+          <ScalarProperty Name="country_id" ColumnName="country_id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="OrderItems">
+      <EntityTypeMapping TypeName="ProyectoModel.OrderItem">
+        <MappingFragment StoreEntitySet="OrderItems">
+          <ScalarProperty Name="order_id" ColumnName="order_id" />
+          <ScalarProperty Name="line_item_id" ColumnName="line_item_id" />
+          <ScalarProperty Name="product_id" ColumnName="product_id" />
+          <ScalarProperty Name="unit_price" ColumnName="unit_price" />
+          <ScalarProperty Name="quantity" ColumnName="quantity" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Orders">
+      <EntityTypeMapping TypeName="ProyectoModel.Order">
+        <MappingFragment StoreEntitySet="Orders">
+          <ScalarProperty Name="order_id" ColumnName="order_id" />
+          <ScalarProperty Name="order_date" ColumnName="order_date" />
+          <ScalarProperty Name="order_mode" ColumnName="order_mode" />
+          <ScalarProperty Name="customer_id" ColumnName="customer_id" />
+          <ScalarProperty Name="order_status" ColumnName="order_status" />
+          <ScalarProperty Name="order_total" ColumnName="order_total" />
+          <ScalarProperty Name="sales_rep_id" ColumnName="sales_rep_id" />
+          <ScalarProperty Name="promotion_id" ColumnName="promotion_id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ProductDescriptions">
+      <EntityTypeMapping TypeName="ProyectoModel.ProductDescription">
+        <MappingFragment StoreEntitySet="ProductDescriptions">
+          <ScalarProperty Name="product_id" ColumnName="product_id" />
+          <ScalarProperty Name="language_id" ColumnName="language_id" />
+          <ScalarProperty Name="translated_name" ColumnName="translated_name" />
+          <ScalarProperty Name="translated_description" ColumnName="translated_description" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ProductInformations">
+      <EntityTypeMapping TypeName="ProyectoModel.ProductInformation">
+        <MappingFragment StoreEntitySet="ProductInformation">
+          <ScalarProperty Name="product_id" ColumnName="product_id" />
+          <ScalarProperty Name="product_name" ColumnName="product_name" />
+          <ScalarProperty Name="product_description" ColumnName="product_description" />
+          <ScalarProperty Name="category_id" ColumnName="category_id" />
+          <ScalarProperty Name="weight_class" ColumnName="weight_class" />
+          <ScalarProperty Name="warranty_period" ColumnName="warranty_period" />
+          <ScalarProperty Name="supplier_id" ColumnName="supplier_id" />
+          <ScalarProperty Name="product_status" ColumnName="product_status" />
+          <ScalarProperty Name="list_price" ColumnName="list_price" />
+          <ScalarProperty Name="min_price" ColumnName="min_price" />
+          <ScalarProperty Name="catalog_url" ColumnName="catalog_url" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Regions">
+      <EntityTypeMapping TypeName="ProyectoModel.Region">
+        <MappingFragment StoreEntitySet="Regions">
+          <ScalarProperty Name="region_id" ColumnName="region_id" />
+          <ScalarProperty Name="region_name" ColumnName="region_name" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Warehouses">
+      <EntityTypeMapping TypeName="ProyectoModel.Warehouse">
+        <MappingFragment StoreEntitySet="Warehouses">
+          <ScalarProperty Name="warehouse_id" ColumnName="warehouse_id" />
+          <ScalarProperty Name="warehouse_spec" ColumnName="warehouse_spec" />
+          <ScalarProperty Name="warehouse_name" ColumnName="warehouse_name" />
+          <ScalarProperty Name="location_id" ColumnName="location_id" />
+          <ScalarProperty Name="wh_geo_location" ColumnName="wh_geo_location" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

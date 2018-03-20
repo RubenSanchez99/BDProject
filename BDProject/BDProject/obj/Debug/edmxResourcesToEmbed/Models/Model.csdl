@@ -1,0 +1,502 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="ProyectoModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="Country">
+    <Key>
+      <PropertyRef Name="country_id" />
+    </Key>
+    <Property Name="country_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="country_name" Type="String" MaxLength="45" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="region_id" Type="Int32" />
+    <NavigationProperty Name="Region" Relationship="Self.FK__Countries__regio__1273C1CD" FromRole="Countries" ToRole="Regions" />
+    <NavigationProperty Name="Locations" Relationship="Self.FK__Locations__count__15502E78" FromRole="Countries" ToRole="Locations" />
+  </EntityType>
+  <EntityType Name="Customer">
+    <Key>
+      <PropertyRef Name="customer_id" />
+    </Key>
+    <Property Name="customer_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="cust_first_name" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="cust_last_name" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="cust_address" Type="String" MaxLength="80" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="phone_number" Type="String" MaxLength="15" FixedLength="true" Unicode="false" Nullable="false" />
+    <Property Name="nls_language" Type="String" MaxLength="2" FixedLength="true" Unicode="false" Nullable="false" />
+    <Property Name="nls_territory" Type="String" MaxLength="2" FixedLength="true" Unicode="false" Nullable="false" />
+    <Property Name="credit_limit" Type="Decimal" Precision="18" Scale="0" Nullable="false" />
+    <Property Name="cust_email" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="account_mgr_id" Type="Int32" />
+    <Property Name="cust_geo_location" Type="Geography" />
+    <Property Name="date_of_birth" Type="DateTime" Nullable="false" Precision="0" />
+    <Property Name="marital_status" Type="String" MaxLength="12" FixedLength="false" Unicode="false" />
+    <Property Name="gender" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="income_level" Type="String" MaxLength="12" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="Employee" Relationship="Self.FK__Customers__accou__276EDEB3" FromRole="Customers" ToRole="Employees" />
+    <NavigationProperty Name="Orders" Relationship="Self.FK__Orders__customer__2D27B809" FromRole="Customers" ToRole="Orders" />
+  </EntityType>
+  <EntityType Name="Department">
+    <Key>
+      <PropertyRef Name="department_id" />
+    </Key>
+    <Property Name="department_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="department_name" Type="String" MaxLength="45" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="manager_id" Type="Int32" />
+    <Property Name="location_id" Type="Int32" />
+    <NavigationProperty Name="Location" Relationship="Self.FK__Departmen__locat__1ED998B2" FromRole="Departments" ToRole="Locations" />
+    <NavigationProperty Name="Employee" Relationship="Self.FK__Departmen__manag__1DE57479" FromRole="Departments" ToRole="Employees" />
+    <NavigationProperty Name="JobHistories" Relationship="Self.FK__JobHistor__depar__24927208" FromRole="Departments" ToRole="JobHistory" />
+    <NavigationProperty Name="Employees" Relationship="Self.FK_Employees_Departments" FromRole="Departments" ToRole="Employees" />
+  </EntityType>
+  <EntityType Name="Employee">
+    <Key>
+      <PropertyRef Name="employee_id" />
+    </Key>
+    <Property Name="employee_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="first_name" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="last_name" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="email" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="phone_number" Type="String" MaxLength="15" FixedLength="true" Unicode="false" Nullable="false" />
+    <Property Name="hire_date" Type="DateTime" Nullable="false" Precision="0" />
+    <Property Name="job_id" Type="Int32" />
+    <Property Name="salary" Type="Decimal" Precision="18" Scale="0" Nullable="false" />
+    <Property Name="commission_pct" Type="Decimal" Precision="18" Scale="0" Nullable="false" />
+    <Property Name="manager_id" Type="Int32" />
+    <Property Name="department_id" Type="Int32" />
+    <NavigationProperty Name="Customers" Relationship="Self.FK__Customers__accou__276EDEB3" FromRole="Employees" ToRole="Customers" />
+    <NavigationProperty Name="Departments" Relationship="Self.FK__Departmen__manag__1DE57479" FromRole="Employees" ToRole="Departments" />
+    <NavigationProperty Name="Department" Relationship="Self.FK_Employees_Departments" FromRole="Employees" ToRole="Departments" />
+    <NavigationProperty Name="Job" Relationship="Self.FK__Employees__job_i__1A14E395" FromRole="Employees" ToRole="Jobs" />
+    <NavigationProperty Name="Employees1" Relationship="Self.FK__Employees__manag__1B0907CE" FromRole="Employees" ToRole="Employees1" />
+    <NavigationProperty Name="Employee1" Relationship="Self.FK__Employees__manag__1B0907CE" FromRole="Employees1" ToRole="Employees" />
+    <NavigationProperty Name="JobHistories" Relationship="Self.FK__JobHistor__emplo__22AA2996" FromRole="Employees" ToRole="JobHistory" />
+    <NavigationProperty Name="Orders" Relationship="Self.FK__Orders__sales_re__2E1BDC42" FromRole="Employees" ToRole="Orders" />
+  </EntityType>
+  <EntityType Name="Inventory">
+    <Key>
+      <PropertyRef Name="product_id" />
+      <PropertyRef Name="warehouse_id" />
+    </Key>
+    <Property Name="product_id" Type="Int32" Nullable="false" />
+    <Property Name="warehouse_id" Type="Int32" Nullable="false" />
+    <Property Name="quantity_on_hand" Type="Decimal" Precision="18" Scale="0" Nullable="false" />
+    <NavigationProperty Name="ProductInformation" Relationship="Self.FK__Inventori__produ__38996AB5" FromRole="Inventories" ToRole="ProductInformation" />
+    <NavigationProperty Name="Warehouse" Relationship="Self.FK__Inventori__wareh__398D8EEE" FromRole="Inventories" ToRole="Warehouses" />
+  </EntityType>
+  <EntityType Name="JobHistory">
+    <Key>
+      <PropertyRef Name="employee_id" />
+      <PropertyRef Name="job_id" />
+    </Key>
+    <Property Name="employee_id" Type="Int32" Nullable="false" />
+    <Property Name="start_date" Type="DateTime" Nullable="false" Precision="0" />
+    <Property Name="end_date" Type="DateTime" Precision="0" />
+    <Property Name="job_id" Type="Int32" Nullable="false" />
+    <Property Name="department_id" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="Department" Relationship="Self.FK__JobHistor__depar__24927208" FromRole="JobHistory" ToRole="Departments" />
+    <NavigationProperty Name="Employee" Relationship="Self.FK__JobHistor__emplo__22AA2996" FromRole="JobHistory" ToRole="Employees" />
+    <NavigationProperty Name="Job" Relationship="Self.FK__JobHistor__job_i__239E4DCF" FromRole="JobHistory" ToRole="Jobs" />
+  </EntityType>
+  <EntityType Name="Job">
+    <Key>
+      <PropertyRef Name="job_id" />
+    </Key>
+    <Property Name="job_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="job_title" Type="String" MaxLength="35" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="min_salary" Type="Decimal" Precision="18" Scale="0" Nullable="false" />
+    <Property Name="max_salary" Type="Decimal" Precision="18" Scale="0" Nullable="false" />
+    <NavigationProperty Name="Employees" Relationship="Self.FK__Employees__job_i__1A14E395" FromRole="Jobs" ToRole="Employees" />
+    <NavigationProperty Name="JobHistories" Relationship="Self.FK__JobHistor__job_i__239E4DCF" FromRole="Jobs" ToRole="JobHistory" />
+  </EntityType>
+  <EntityType Name="Location">
+    <Key>
+      <PropertyRef Name="location_id" />
+    </Key>
+    <Property Name="location_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="street_address" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="postal_code" Type="String" MaxLength="8" FixedLength="true" Unicode="false" Nullable="false" />
+    <Property Name="city" Type="String" MaxLength="30" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="state_province" Type="String" MaxLength="30" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="country_id" Type="Int32" />
+    <NavigationProperty Name="Country" Relationship="Self.FK__Locations__count__15502E78" FromRole="Locations" ToRole="Countries" />
+    <NavigationProperty Name="Departments" Relationship="Self.FK__Departmen__locat__1ED998B2" FromRole="Locations" ToRole="Departments" />
+    <NavigationProperty Name="Warehouses" Relationship="Self.FK__Warehouse__locat__2A4B4B5E" FromRole="Locations" ToRole="Warehouses" />
+  </EntityType>
+  <EntityType Name="OrderItem">
+    <Key>
+      <PropertyRef Name="order_id" />
+      <PropertyRef Name="product_id" />
+    </Key>
+    <Property Name="order_id" Type="Int32" Nullable="false" />
+    <Property Name="line_item_id" Type="Int32" />
+    <Property Name="product_id" Type="Int32" Nullable="false" />
+    <Property Name="unit_price" Type="Decimal" Precision="18" Scale="0" Nullable="false" />
+    <Property Name="quantity" Type="Decimal" Precision="18" Scale="0" Nullable="false" />
+    <NavigationProperty Name="Order" Relationship="Self.FK__OrderItem__order__34C8D9D1" FromRole="OrderItems" ToRole="Orders" />
+    <NavigationProperty Name="ProductInformation" Relationship="Self.FK__OrderItem__produ__35BCFE0A" FromRole="OrderItems" ToRole="ProductInformation" />
+  </EntityType>
+  <EntityType Name="Order">
+    <Key>
+      <PropertyRef Name="order_id" />
+    </Key>
+    <Property Name="order_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="order_date" Type="DateTime" Nullable="false" Precision="0" />
+    <Property Name="order_mode" Type="String" MaxLength="15" FixedLength="false" Unicode="false" />
+    <Property Name="customer_id" Type="Int32" />
+    <Property Name="order_status" Type="String" MaxLength="15" FixedLength="false" Unicode="false" />
+    <Property Name="order_total" Type="Decimal" Precision="18" Scale="0" />
+    <Property Name="sales_rep_id" Type="Int32" />
+    <Property Name="promotion_id" Type="Int32" />
+    <NavigationProperty Name="Customer" Relationship="Self.FK__Orders__customer__2D27B809" FromRole="Orders" ToRole="Customers" />
+    <NavigationProperty Name="Employee" Relationship="Self.FK__Orders__sales_re__2E1BDC42" FromRole="Orders" ToRole="Employees" />
+    <NavigationProperty Name="OrderItems" Relationship="Self.FK__OrderItem__order__34C8D9D1" FromRole="Orders" ToRole="OrderItems" />
+  </EntityType>
+  <EntityType Name="ProductDescription">
+    <Key>
+      <PropertyRef Name="product_id" />
+    </Key>
+    <Property Name="product_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="language_id" Type="String" MaxLength="2" FixedLength="true" Unicode="false" />
+    <Property Name="translated_name" Type="String" MaxLength="45" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="translated_description" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
+  </EntityType>
+  <EntityType Name="ProductInformation">
+    <Key>
+      <PropertyRef Name="product_id" />
+    </Key>
+    <Property Name="product_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="product_name" Type="String" MaxLength="45" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="product_description" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="category_id" Type="Int32" />
+    <Property Name="weight_class" Type="String" MaxLength="15" FixedLength="false" Unicode="false" />
+    <Property Name="warranty_period" Type="DateTime" Precision="0" />
+    <Property Name="supplier_id" Type="Int32" />
+    <Property Name="product_status" Type="String" MaxLength="15" FixedLength="false" Unicode="false" />
+    <Property Name="list_price" Type="Decimal" Precision="18" Scale="0" Nullable="false" />
+    <Property Name="min_price" Type="Decimal" Precision="18" Scale="0" Nullable="false" />
+    <Property Name="catalog_url" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="Inventories" Relationship="Self.FK__Inventori__produ__38996AB5" FromRole="ProductInformation" ToRole="Inventories" />
+    <NavigationProperty Name="OrderItems" Relationship="Self.FK__OrderItem__produ__35BCFE0A" FromRole="ProductInformation" ToRole="OrderItems" />
+  </EntityType>
+  <EntityType Name="Region">
+    <Key>
+      <PropertyRef Name="region_id" />
+    </Key>
+    <Property Name="region_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="region_name" Type="String" MaxLength="45" FixedLength="false" Unicode="false" Nullable="false" />
+    <NavigationProperty Name="Countries" Relationship="Self.FK__Countries__regio__1273C1CD" FromRole="Regions" ToRole="Countries" />
+  </EntityType>
+  <EntityType Name="Warehouse">
+    <Key>
+      <PropertyRef Name="warehouse_id" />
+    </Key>
+    <Property Name="warehouse_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="warehouse_spec" Type="String" MaxLength="12" FixedLength="false" Unicode="false" />
+    <Property Name="warehouse_name" Type="String" MaxLength="45" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="location_id" Type="Int32" />
+    <Property Name="wh_geo_location" Type="Geography" />
+    <NavigationProperty Name="Inventories" Relationship="Self.FK__Inventori__wareh__398D8EEE" FromRole="Warehouses" ToRole="Inventories" />
+    <NavigationProperty Name="Location" Relationship="Self.FK__Warehouse__locat__2A4B4B5E" FromRole="Warehouses" ToRole="Locations" />
+  </EntityType>
+  <Association Name="FK__Countries__regio__1273C1CD">
+    <End Role="Regions" Type="Self.Region" Multiplicity="0..1" />
+    <End Role="Countries" Type="Self.Country" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Regions">
+        <PropertyRef Name="region_id" />
+      </Principal>
+      <Dependent Role="Countries">
+        <PropertyRef Name="region_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Locations__count__15502E78">
+    <End Role="Countries" Type="Self.Country" Multiplicity="0..1" />
+    <End Role="Locations" Type="Self.Location" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Countries">
+        <PropertyRef Name="country_id" />
+      </Principal>
+      <Dependent Role="Locations">
+        <PropertyRef Name="country_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Customers__accou__276EDEB3">
+    <End Role="Employees" Type="Self.Employee" Multiplicity="0..1" />
+    <End Role="Customers" Type="Self.Customer" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Employees">
+        <PropertyRef Name="employee_id" />
+      </Principal>
+      <Dependent Role="Customers">
+        <PropertyRef Name="account_mgr_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Orders__customer__2D27B809">
+    <End Role="Customers" Type="Self.Customer" Multiplicity="0..1" />
+    <End Role="Orders" Type="Self.Order" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Customers">
+        <PropertyRef Name="customer_id" />
+      </Principal>
+      <Dependent Role="Orders">
+        <PropertyRef Name="customer_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Departmen__locat__1ED998B2">
+    <End Role="Locations" Type="Self.Location" Multiplicity="0..1" />
+    <End Role="Departments" Type="Self.Department" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Locations">
+        <PropertyRef Name="location_id" />
+      </Principal>
+      <Dependent Role="Departments">
+        <PropertyRef Name="location_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Departmen__manag__1DE57479">
+    <End Role="Employees" Type="Self.Employee" Multiplicity="0..1" />
+    <End Role="Departments" Type="Self.Department" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Employees">
+        <PropertyRef Name="employee_id" />
+      </Principal>
+      <Dependent Role="Departments">
+        <PropertyRef Name="manager_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__JobHistor__depar__24927208">
+    <End Role="Departments" Type="Self.Department" Multiplicity="1" />
+    <End Role="JobHistory" Type="Self.JobHistory" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Departments">
+        <PropertyRef Name="department_id" />
+      </Principal>
+      <Dependent Role="JobHistory">
+        <PropertyRef Name="department_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Employees_Departments">
+    <End Role="Departments" Type="Self.Department" Multiplicity="0..1" />
+    <End Role="Employees" Type="Self.Employee" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Departments">
+        <PropertyRef Name="department_id" />
+      </Principal>
+      <Dependent Role="Employees">
+        <PropertyRef Name="department_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Employees__job_i__1A14E395">
+    <End Role="Jobs" Type="Self.Job" Multiplicity="0..1" />
+    <End Role="Employees" Type="Self.Employee" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Jobs">
+        <PropertyRef Name="job_id" />
+      </Principal>
+      <Dependent Role="Employees">
+        <PropertyRef Name="job_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Employees__manag__1B0907CE">
+    <End Role="Employees" Type="Self.Employee" Multiplicity="0..1" />
+    <End Role="Employees1" Type="Self.Employee" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Employees">
+        <PropertyRef Name="employee_id" />
+      </Principal>
+      <Dependent Role="Employees1">
+        <PropertyRef Name="manager_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__JobHistor__emplo__22AA2996">
+    <End Role="Employees" Type="Self.Employee" Multiplicity="1" />
+    <End Role="JobHistory" Type="Self.JobHistory" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Employees">
+        <PropertyRef Name="employee_id" />
+      </Principal>
+      <Dependent Role="JobHistory">
+        <PropertyRef Name="employee_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Orders__sales_re__2E1BDC42">
+    <End Role="Employees" Type="Self.Employee" Multiplicity="0..1" />
+    <End Role="Orders" Type="Self.Order" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Employees">
+        <PropertyRef Name="employee_id" />
+      </Principal>
+      <Dependent Role="Orders">
+        <PropertyRef Name="sales_rep_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Inventori__produ__38996AB5">
+    <End Role="ProductInformation" Type="Self.ProductInformation" Multiplicity="1" />
+    <End Role="Inventories" Type="Self.Inventory" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="ProductInformation">
+        <PropertyRef Name="product_id" />
+      </Principal>
+      <Dependent Role="Inventories">
+        <PropertyRef Name="product_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Inventori__wareh__398D8EEE">
+    <End Role="Warehouses" Type="Self.Warehouse" Multiplicity="1" />
+    <End Role="Inventories" Type="Self.Inventory" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Warehouses">
+        <PropertyRef Name="warehouse_id" />
+      </Principal>
+      <Dependent Role="Inventories">
+        <PropertyRef Name="warehouse_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__JobHistor__job_i__239E4DCF">
+    <End Role="Jobs" Type="Self.Job" Multiplicity="1" />
+    <End Role="JobHistory" Type="Self.JobHistory" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Jobs">
+        <PropertyRef Name="job_id" />
+      </Principal>
+      <Dependent Role="JobHistory">
+        <PropertyRef Name="job_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Warehouse__locat__2A4B4B5E">
+    <End Role="Locations" Type="Self.Location" Multiplicity="0..1" />
+    <End Role="Warehouses" Type="Self.Warehouse" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Locations">
+        <PropertyRef Name="location_id" />
+      </Principal>
+      <Dependent Role="Warehouses">
+        <PropertyRef Name="location_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__OrderItem__order__34C8D9D1">
+    <End Role="Orders" Type="Self.Order" Multiplicity="1" />
+    <End Role="OrderItems" Type="Self.OrderItem" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Orders">
+        <PropertyRef Name="order_id" />
+      </Principal>
+      <Dependent Role="OrderItems">
+        <PropertyRef Name="order_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__OrderItem__produ__35BCFE0A">
+    <End Role="ProductInformation" Type="Self.ProductInformation" Multiplicity="1" />
+    <End Role="OrderItems" Type="Self.OrderItem" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="ProductInformation">
+        <PropertyRef Name="product_id" />
+      </Principal>
+      <Dependent Role="OrderItems">
+        <PropertyRef Name="product_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="ProyectoEntities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="Countries" EntityType="Self.Country" />
+    <EntitySet Name="Customers" EntityType="Self.Customer" />
+    <EntitySet Name="Departments" EntityType="Self.Department" />
+    <EntitySet Name="Employees" EntityType="Self.Employee" />
+    <EntitySet Name="Inventories" EntityType="Self.Inventory" />
+    <EntitySet Name="JobHistories" EntityType="Self.JobHistory" />
+    <EntitySet Name="Jobs" EntityType="Self.Job" />
+    <EntitySet Name="Locations" EntityType="Self.Location" />
+    <EntitySet Name="OrderItems" EntityType="Self.OrderItem" />
+    <EntitySet Name="Orders" EntityType="Self.Order" />
+    <EntitySet Name="ProductDescriptions" EntityType="Self.ProductDescription" />
+    <EntitySet Name="ProductInformations" EntityType="Self.ProductInformation" />
+    <EntitySet Name="Regions" EntityType="Self.Region" />
+    <EntitySet Name="Warehouses" EntityType="Self.Warehouse" />
+    <AssociationSet Name="FK__Countries__regio__1273C1CD" Association="Self.FK__Countries__regio__1273C1CD">
+      <End Role="Regions" EntitySet="Regions" />
+      <End Role="Countries" EntitySet="Countries" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Locations__count__15502E78" Association="Self.FK__Locations__count__15502E78">
+      <End Role="Countries" EntitySet="Countries" />
+      <End Role="Locations" EntitySet="Locations" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Customers__accou__276EDEB3" Association="Self.FK__Customers__accou__276EDEB3">
+      <End Role="Employees" EntitySet="Employees" />
+      <End Role="Customers" EntitySet="Customers" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Orders__customer__2D27B809" Association="Self.FK__Orders__customer__2D27B809">
+      <End Role="Customers" EntitySet="Customers" />
+      <End Role="Orders" EntitySet="Orders" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Departmen__locat__1ED998B2" Association="Self.FK__Departmen__locat__1ED998B2">
+      <End Role="Locations" EntitySet="Locations" />
+      <End Role="Departments" EntitySet="Departments" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Departmen__manag__1DE57479" Association="Self.FK__Departmen__manag__1DE57479">
+      <End Role="Employees" EntitySet="Employees" />
+      <End Role="Departments" EntitySet="Departments" />
+    </AssociationSet>
+    <AssociationSet Name="FK__JobHistor__depar__24927208" Association="Self.FK__JobHistor__depar__24927208">
+      <End Role="Departments" EntitySet="Departments" />
+      <End Role="JobHistory" EntitySet="JobHistories" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Employees_Departments" Association="Self.FK_Employees_Departments">
+      <End Role="Departments" EntitySet="Departments" />
+      <End Role="Employees" EntitySet="Employees" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Employees__job_i__1A14E395" Association="Self.FK__Employees__job_i__1A14E395">
+      <End Role="Jobs" EntitySet="Jobs" />
+      <End Role="Employees" EntitySet="Employees" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Employees__manag__1B0907CE" Association="Self.FK__Employees__manag__1B0907CE">
+      <End Role="Employees" EntitySet="Employees" />
+      <End Role="Employees1" EntitySet="Employees" />
+    </AssociationSet>
+    <AssociationSet Name="FK__JobHistor__emplo__22AA2996" Association="Self.FK__JobHistor__emplo__22AA2996">
+      <End Role="Employees" EntitySet="Employees" />
+      <End Role="JobHistory" EntitySet="JobHistories" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Orders__sales_re__2E1BDC42" Association="Self.FK__Orders__sales_re__2E1BDC42">
+      <End Role="Employees" EntitySet="Employees" />
+      <End Role="Orders" EntitySet="Orders" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Inventori__produ__38996AB5" Association="Self.FK__Inventori__produ__38996AB5">
+      <End Role="ProductInformation" EntitySet="ProductInformations" />
+      <End Role="Inventories" EntitySet="Inventories" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Inventori__wareh__398D8EEE" Association="Self.FK__Inventori__wareh__398D8EEE">
+      <End Role="Warehouses" EntitySet="Warehouses" />
+      <End Role="Inventories" EntitySet="Inventories" />
+    </AssociationSet>
+    <AssociationSet Name="FK__JobHistor__job_i__239E4DCF" Association="Self.FK__JobHistor__job_i__239E4DCF">
+      <End Role="Jobs" EntitySet="Jobs" />
+      <End Role="JobHistory" EntitySet="JobHistories" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Warehouse__locat__2A4B4B5E" Association="Self.FK__Warehouse__locat__2A4B4B5E">
+      <End Role="Locations" EntitySet="Locations" />
+      <End Role="Warehouses" EntitySet="Warehouses" />
+    </AssociationSet>
+    <AssociationSet Name="FK__OrderItem__order__34C8D9D1" Association="Self.FK__OrderItem__order__34C8D9D1">
+      <End Role="Orders" EntitySet="Orders" />
+      <End Role="OrderItems" EntitySet="OrderItems" />
+    </AssociationSet>
+    <AssociationSet Name="FK__OrderItem__produ__35BCFE0A" Association="Self.FK__OrderItem__produ__35BCFE0A">
+      <End Role="ProductInformation" EntitySet="ProductInformations" />
+      <End Role="OrderItems" EntitySet="OrderItems" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="15f9af9bc8d44f7e91bad2de396ca00f" Name="Diagram1" ZoomLevel="64">
+        <EntityTypeShape EntityType="ProyectoModel.Country" Width="1.5" PointX="3.75" PointY="9.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="ProyectoModel.Customer" Width="1.5" PointX="5.25" PointY="3.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="ProyectoModel.Department" Width="1.5" PointX="8.25" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="ProyectoModel.Employee" Width="1.5" PointX="3" PointY="3.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="ProyectoModel.Inventory" Width="1.5" PointX="10.5" PointY="15.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="ProyectoModel.JobHistory" Width="1.5" PointX="10.5" PointY="3.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="ProyectoModel.Job" Width="1.5" PointX="0.75" PointY="5" IsExpanded="true" />
+        <EntityTypeShape EntityType="ProyectoModel.Location" Width="1.5" PointX="6" PointY="9.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="ProyectoModel.OrderItem" Width="1.5" PointX="9.75" PointY="6.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="ProyectoModel.Order" Width="1.5" PointX="7.5" PointY="4.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="ProyectoModel.ProductDescription" Width="1.5" PointX="9.75" PointY="10.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="ProyectoModel.ProductInformation" Width="1.5" PointX="7.5" PointY="13.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="ProyectoModel.Region" Width="1.5" PointX="1.5" PointY="10.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="ProyectoModel.Warehouse" Width="1.5" PointX="8.25" PointY="17.75" IsExpanded="true" />
+        <AssociationConnector Association="ProyectoModel.FK__Countries__regio__1273C1CD" ManuallyRouted="false" />
+        <AssociationConnector Association="ProyectoModel.FK__Locations__count__15502E78" ManuallyRouted="false" />
+        <AssociationConnector Association="ProyectoModel.FK__Customers__accou__276EDEB3" ManuallyRouted="false" />
+        <AssociationConnector Association="ProyectoModel.FK__Orders__customer__2D27B809" ManuallyRouted="false" />
+        <AssociationConnector Association="ProyectoModel.FK__Departmen__locat__1ED998B2" ManuallyRouted="false" />
+        <AssociationConnector Association="ProyectoModel.FK__Departmen__manag__1DE57479" ManuallyRouted="false" />
+        <AssociationConnector Association="ProyectoModel.FK__JobHistor__depar__24927208" ManuallyRouted="false" />
+        <AssociationConnector Association="ProyectoModel.FK_Employees_Departments" ManuallyRouted="false" />
+        <AssociationConnector Association="ProyectoModel.FK__Employees__job_i__1A14E395" ManuallyRouted="false" />
+        <AssociationConnector Association="ProyectoModel.FK__Employees__manag__1B0907CE" ManuallyRouted="false" />
+        <AssociationConnector Association="ProyectoModel.FK__JobHistor__emplo__22AA2996" ManuallyRouted="false" />
+        <AssociationConnector Association="ProyectoModel.FK__Orders__sales_re__2E1BDC42" ManuallyRouted="false" />
+        <AssociationConnector Association="ProyectoModel.FK__Inventori__produ__38996AB5" ManuallyRouted="false" />
+        <AssociationConnector Association="ProyectoModel.FK__Inventori__wareh__398D8EEE" ManuallyRouted="false" />
+        <AssociationConnector Association="ProyectoModel.FK__JobHistor__job_i__239E4DCF" ManuallyRouted="false" />
+        <AssociationConnector Association="ProyectoModel.FK__Warehouse__locat__2A4B4B5E" ManuallyRouted="false" />
+        <AssociationConnector Association="ProyectoModel.FK__OrderItem__order__34C8D9D1" ManuallyRouted="false" />
+        <AssociationConnector Association="ProyectoModel.FK__OrderItem__produ__35BCFE0A" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>
