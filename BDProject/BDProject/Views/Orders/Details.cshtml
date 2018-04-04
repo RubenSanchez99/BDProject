@@ -1,0 +1,75 @@
+﻿@model BDProject.Models.Order
+
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Order</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.order_date)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.order_date)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.order_mode)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.order_mode)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.order_status)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.order_status)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.order_total)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.order_total)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.promotion_id)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.promotion_id)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Customer.cust_first_name)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Customer.cust_first_name)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Employee.first_name)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Employee.first_name)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.order_id }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>
