@@ -1,0 +1,52 @@
+﻿@model IEnumerable<BDProject.Models.Warehouse>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.warehouse_spec)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.warehouse_name)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.wh_geo_location)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Location.street_address)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.warehouse_spec)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.warehouse_name)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.wh_geo_location)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Location.street_address)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.warehouse_id }) |
+            @Html.ActionLink("Details", "Details", new { id=item.warehouse_id }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.warehouse_id })
+        </td>
+    </tr>
+}
+
+</table>

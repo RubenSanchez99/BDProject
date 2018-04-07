@@ -1,0 +1,51 @@
+﻿@model BDProject.Models.Warehouse
+
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Warehouse</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.warehouse_spec)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.warehouse_spec)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.warehouse_name)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.warehouse_name)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.wh_geo_location)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.wh_geo_location)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Location.street_address)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Location.street_address)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.warehouse_id }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>
