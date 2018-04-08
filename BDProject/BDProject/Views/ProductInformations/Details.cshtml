@@ -1,0 +1,99 @@
+﻿@model BDProject.Models.ProductInformation
+
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>ProductInformation</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.product_name)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.product_name)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.product_description)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.product_description)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.category_id)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.category_id)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.weight_class)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.weight_class)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.warranty_period)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.warranty_period)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.supplier_id)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.supplier_id)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.product_status)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.product_status)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.list_price)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.list_price)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.min_price)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.min_price)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.catalog_url)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.catalog_url)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Editar", "Edit", new { id = Model.product_id }) |
+    @Html.ActionLink("Regresar a la lista", "Index")
+</p>

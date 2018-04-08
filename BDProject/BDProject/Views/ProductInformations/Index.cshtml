@@ -1,0 +1,88 @@
+﻿@model IEnumerable<BDProject.Models.ProductInformation>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Crear Nuevo", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.product_name)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.product_description)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.category_id)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.weight_class)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.warranty_period)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.supplier_id)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.product_status)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.list_price)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.min_price)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.catalog_url)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.product_name)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.product_description)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.category_id)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.weight_class)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.warranty_period)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.supplier_id)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.product_status)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.list_price)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.min_price)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.catalog_url)
+        </td>
+        <td>
+            @Html.ActionLink("Editar", "Edit", new { id=item.product_id }) |
+            @Html.ActionLink("Detalles", "Details", new { id=item.product_id }) |
+            @Html.ActionLink("Eliminar", "Delete", new { id=item.product_id })
+        </td>
+    </tr>
+}
+
+</table>

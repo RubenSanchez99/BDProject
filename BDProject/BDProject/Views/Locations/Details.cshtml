@@ -1,0 +1,59 @@
+﻿@model BDProject.Models.Location
+
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Location</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.street_address)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.street_address)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.postal_code)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.postal_code)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.city)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.city)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.state_province)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.state_province)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Country.country_name)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Country.country_name)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.location_id }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

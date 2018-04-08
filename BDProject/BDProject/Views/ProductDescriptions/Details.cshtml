@@ -1,0 +1,43 @@
+﻿@model BDProject.Models.ProductDescription
+
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>ProductDescription</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.language_id)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.language_id)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.translated_name)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.translated_name)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.translated_description)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.translated_description)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Editar", "Edit", new { id = Model.product_id }) |
+    @Html.ActionLink("Regresar a la lista", "Index")
+</p>
