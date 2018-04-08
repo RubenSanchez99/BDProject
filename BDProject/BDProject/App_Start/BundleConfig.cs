@@ -25,7 +25,9 @@ namespace BDProject
 
 			bundles.Add(new StyleBundle("~/Content/css").Include(
 					  "~/Content/bootstrap.css",
-					  "~/Content/site.css"));
+					  "~/Content/site.css",
+                       "~/Content/Home.css",
+                       "~/Content/carousel.css"));
 		}
 	}
 }
