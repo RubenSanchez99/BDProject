@@ -1,0 +1,106 @@
+﻿@model IEnumerable<BDProject.Models.Customer>
+
+@{
+    ViewBag.Title = "Índice";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Índice</h2>
+
+<p>
+    @Html.ActionLink("Nuevo cliente", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.cust_first_name)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.cust_last_name)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.cust_address)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.phone_number)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.nls_language)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.nls_territory)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.credit_limit)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.cust_email)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.date_of_birth)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.marital_status)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.gender)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.income_level)
+        </th>
+        <th>
+            Encargado
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.cust_first_name)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.cust_last_name)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.cust_address)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.phone_number)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.nls_language)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.nls_territory)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.credit_limit)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.cust_email)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.date_of_birth)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.marital_status)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.gender)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.income_level)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Employee.full_name)
+        </td>
+        <td>
+            @Html.ActionLink("Editar", "Edit", new { id=item.customer_id }) |
+            @Html.ActionLink("Consultar", "Details", new { id=item.customer_id }) |
+            @Html.ActionLink("Eliminar", "Delete", new { id=item.customer_id })
+        </td>
+    </tr>
+}
+
+</table>

@@ -1,0 +1,123 @@
+﻿@model BDProject.Models.Customer
+
+@{
+    ViewBag.Title = "Consulta";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Consulta</h2>
+
+<div>
+    <h4>Cliente</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.cust_first_name)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.cust_first_name)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.cust_last_name)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.cust_last_name)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.cust_address)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.cust_address)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.phone_number)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.phone_number)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.nls_language)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.nls_language)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.nls_territory)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.nls_territory)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.credit_limit)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.credit_limit)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.cust_email)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.cust_email)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.date_of_birth)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.date_of_birth)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.marital_status)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.marital_status)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.gender)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.gender)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.income_level)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.income_level)
+        </dd>
+
+        <dt>
+            Encargado
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Employee.full_name)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Editar", "Edit", new { id = Model.customer_id }) |
+    @Html.ActionLink("Regresar al inico", "Index")
+</p>

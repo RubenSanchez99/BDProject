@@ -1,0 +1,105 @@
+﻿@model BDProject.Models.Employee
+
+@{
+    ViewBag.Title = "Eliminar";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Eliminar</h2>
+
+<h3>¿Está seguro que desea eliminar a este empleado?</h3>
+<div>
+    <h4>Empleado</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.first_name)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.first_name)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.last_name)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.last_name)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.email)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.email)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.phone_number)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.phone_number)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.hire_date)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.hire_date)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.salary)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.salary)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.commission_pct)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.commission_pct)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Department.department_name)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Department.department_name)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Job.job_title)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Job.job_title)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Employee1.first_name)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Employee1.first_name)
+        </dd>
+
+    </dl>
+
+    @using (Html.BeginForm()) {
+        @Html.AntiForgeryToken()
+
+        <div class="form-actions no-color">
+            <input type="submit" value="Delete" class="btn btn-default" name="Eliminar" /> |
+            @Html.ActionLink("Regresar al incio", "Index")
+        </div>
+    }
+</div>

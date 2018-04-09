@@ -1,0 +1,99 @@
+﻿@model BDProject.Models.Employee
+
+@{
+    ViewBag.Title = "Consulta";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Consultar</h2>
+
+<div>
+    <h4>Empleado</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.first_name)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.first_name)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.last_name)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.last_name)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.email)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.email)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.phone_number)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.phone_number)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.hire_date)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.hire_date)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.salary)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.salary)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.commission_pct)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.commission_pct)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Department.department_name)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Department.department_name)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Job.job_title)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Job.job_title)
+        </dd>
+
+        <dt>
+            Manager
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Employee1.first_name) @Html.DisplayFor(model => model.Employee1.last_name)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Editar", "Edit", new { id = Model.employee_id }) |
+    @Html.ActionLink("Regresar al inicio", "Index")
+</p>

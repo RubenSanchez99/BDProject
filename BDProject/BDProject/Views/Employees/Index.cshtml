@@ -1,0 +1,82 @@
+﻿@model IEnumerable<BDProject.Models.Employee>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Índice</h2>
+
+<p>
+    @Html.ActionLink("Nuevo empleado", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.full_name)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.email)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.phone_number)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.hire_date)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.salary)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.commission_pct)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Department.department_name)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Job.job_title)
+        </th>
+        <th>
+            Manager
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.full_name)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.email)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.phone_number)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.hire_date)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.salary)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.commission_pct)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Department.department_name)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Job.job_title)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Employee1.first_name) @Html.DisplayFor(modelItem => item.Employee1.last_name)
+        </td>
+        <td>
+            @Html.ActionLink("Editar", "Edit", new { id=item.employee_id }) |
+            @Html.ActionLink("Consultar", "Details", new { id=item.employee_id }) |
+            @Html.ActionLink("Eliminar", "Delete", new { id=item.employee_id })
+        </td>
+    </tr>
+}
+
+</table>
