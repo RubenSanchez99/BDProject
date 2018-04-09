@@ -11,16 +11,23 @@ namespace BDProject.Models
 {
     using System;
     using System.Collections.Generic;
-    
-    public partial class OrderItem
+	using System.ComponentModel;
+
+	public partial class OrderItem
     {
-        public int order_id { get; set; }
+		[DisplayName("Órden")]
+		public int order_id { get; set; }
         public Nullable<int> line_item_id { get; set; }
-        public int product_id { get; set; }
-        public decimal unit_price { get; set; }
-        public decimal quantity { get; set; }
-    
-        public virtual Order Order { get; set; }
-        public virtual ProductInformation ProductInformation { get; set; }
+		[DisplayName("Artículo")]
+		public int product_id { get; set; }
+		[DisplayName("Precio unitario")]
+		public decimal unit_price { get; set; }
+		[DisplayName("Cantidad")]
+		public decimal quantity { get; set; }
+
+		[DisplayName("Órden")]
+		public virtual Order Order { get; set; }
+		[DisplayName("Artículo")]
+		public virtual ProductInformation ProductInformation { get; set; }
     }
 }

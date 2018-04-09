@@ -11,30 +11,46 @@ namespace BDProject.Models
 {
     using System;
     using System.Collections.Generic;
-    
-    public partial class Customer
+	using System.ComponentModel;
+
+	public partial class Customer
     {
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
         public Customer()
         {
             this.Orders = new HashSet<Order>();
         }
-    
-        public int customer_id { get; set; }
-        public string cust_first_name { get; set; }
-        public string cust_last_name { get; set; }
-        public string cust_address { get; set; }
-        public string phone_number { get; set; }
-        public string nls_language { get; set; }
-        public string nls_territory { get; set; }
-        public decimal credit_limit { get; set; }
-        public string cust_email { get; set; }
-        public Nullable<int> account_mgr_id { get; set; }
-        public System.Data.Entity.Spatial.DbGeography cust_geo_location { get; set; }
-        public System.DateTime date_of_birth { get; set; }
-        public string marital_status { get; set; }
-        public string gender { get; set; }
-        public string income_level { get; set; }
+
+		[DisplayName("Cliente")]
+		public int customer_id { get; set; }
+		[DisplayName("Nombre")]
+		public string cust_first_name { get; set; }
+		[DisplayName("Apellido")]
+		public string cust_last_name { get; set; }
+		[DisplayName("Dirección")]
+		public string cust_address { get; set; }
+		[DisplayName("Teléfono")]
+		public string phone_number { get; set; }
+		[DisplayName("Idioma")]
+		public string nls_language { get; set; }
+		[DisplayName("Ubicación")]
+		public string nls_territory { get; set; }
+		[DisplayName("Límite de crédito")]
+		public decimal credit_limit { get; set; }
+		[DisplayName("Email")]
+		public string cust_email { get; set; }
+		[DisplayName("Encargado")]
+		public Nullable<int> account_mgr_id { get; set; }
+		[DisplayName("Localización")]
+		public System.Data.Entity.Spatial.DbGeography cust_geo_location { get; set; }
+		[DisplayName("Fecha de nacimiento")]
+		public System.DateTime date_of_birth { get; set; }
+		[DisplayName("Estado civil")]
+		public string marital_status { get; set; }
+		[DisplayName("Género")]
+		public string gender { get; set; }
+		[DisplayName("Nivel de ingresos")]
+		public string income_level { get; set; }
     
         public virtual Employee Employee { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]

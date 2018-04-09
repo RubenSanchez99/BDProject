@@ -11,14 +11,20 @@ namespace BDProject.Models
 {
     using System;
     using System.Collections.Generic;
-    
-    public partial class Inventory
+	using System.ComponentModel;
+
+	public partial class Inventory
     {
-        public int product_id { get; set; }
-        public int warehouse_id { get; set; }
-        public decimal quantity_on_hand { get; set; }
-    
-        public virtual ProductInformation ProductInformation { get; set; }
-        public virtual Warehouse Warehouse { get; set; }
+		[DisplayName("Artículo")]
+		public int product_id { get; set; }
+		[DisplayName("Almacén")]
+		public int warehouse_id { get; set; }
+		[DisplayName("Cantidad")]
+		public decimal quantity_on_hand { get; set; }
+
+		[DisplayName("Información")]
+		public virtual ProductInformation ProductInformation { get; set; }
+		[DisplayName("Almacén")]
+		public virtual Warehouse Warehouse { get; set; }
     }
 }

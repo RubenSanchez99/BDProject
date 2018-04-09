@@ -11,8 +11,10 @@ namespace BDProject.Models
 {
     using System;
     using System.Collections.Generic;
-    
-    public partial class Employee
+	using System.ComponentModel;
+	using System.ComponentModel.DataAnnotations;
+
+	public partial class Employee
     {
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
         public Employee()
@@ -23,18 +25,36 @@ namespace BDProject.Models
             this.JobHistories = new HashSet<JobHistory>();
             this.Orders = new HashSet<Order>();
         }
-    
-        public int employee_id { get; set; }
-        public string first_name { get; set; }
-        public string last_name { get; set; }
-        public string email { get; set; }
-        public string phone_number { get; set; }
-        public System.DateTime hire_date { get; set; }
-        public Nullable<int> job_id { get; set; }
-        public decimal salary { get; set; }
-        public decimal commission_pct { get; set; }
-        public Nullable<int> manager_id { get; set; }
-        public Nullable<int> department_id { get; set; }
+
+		[DisplayName("Empleado")]
+		public int employee_id { get; set; }
+		[DisplayName("Nombre")]
+		public string first_name { get; set; }
+		[DisplayName("Apellido")]
+		public string last_name { get; set; }
+		[DisplayName("Correo electrónico")]
+		public string email { get; set; }
+		[DisplayName("Teléfono")]
+		public string phone_number { get; set; }
+		[DisplayName("Fecha de contratación")]
+		[DisplayFormat(DataFormatString = "{0:d}", ApplyFormatInEditMode = true)]
+		[DataType(DataType.Date)]
+		public System.DateTime hire_date { get; set; }
+		[DisplayName("Puesto")]
+		public Nullable<int> job_id { get; set; }
+		[DisplayName("Salario")]
+		[DisplayFormat(DataFormatString = "{0:C}", ApplyFormatInEditMode = true)]
+		public decimal salary { get; set; }
+		[DisplayName("Porcentaje de comisión")]
+		[DisplayFormat(DataFormatString = "{0:##\\%}", ApplyFormatInEditMode = false)]
+		public decimal commission_pct { get; set; }
+		[DisplayName("Manager")]
+		public Nullable<int> manager_id { get; set; }
+		[DisplayName("Departamento")]
+		public Nullable<int> department_id { get; set; }
+
+		[DisplayName("Nombre")]
+		public string full_name { get { return first_name + " " + last_name; } }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Customer> Customers { get; set; }

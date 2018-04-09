@@ -11,12 +11,17 @@ namespace BDProject.Models
 {
     using System;
     using System.Collections.Generic;
-    
-    public partial class ProductDescription
+	using System.ComponentModel;
+
+	public partial class ProductDescription
     {
-        public int product_id { get; set; }
-        public string language_id { get; set; }
-        public string translated_name { get; set; }
-        public string translated_description { get; set; }
+		[DisplayName("Producto")]
+		public int product_id { get; set; }
+		[DisplayName("Idioma")]
+		public string language_id { get; set; }
+		[DisplayName("Nombre")]
+		public string translated_name { get; set; }
+		[DisplayName("Descripción")]
+		public string translated_description { get; set; }
     }
 }

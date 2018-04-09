@@ -11,8 +11,9 @@ namespace BDProject.Models
 {
     using System;
     using System.Collections.Generic;
-    
-    public partial class ProductInformation
+	using System.ComponentModel;
+
+	public partial class ProductInformation
     {
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
         public ProductInformation()
@@ -20,18 +21,29 @@ namespace BDProject.Models
             this.Inventories = new HashSet<Inventory>();
             this.OrderItems = new HashSet<OrderItem>();
         }
-    
-        public int product_id { get; set; }
-        public string product_name { get; set; }
-        public string product_description { get; set; }
-        public Nullable<int> category_id { get; set; }
-        public string weight_class { get; set; }
-        public Nullable<System.DateTime> warranty_period { get; set; }
-        public Nullable<int> supplier_id { get; set; }
-        public string product_status { get; set; }
-        public decimal list_price { get; set; }
-        public decimal min_price { get; set; }
-        public string catalog_url { get; set; }
+
+		[DisplayName("Producto")]
+		public int product_id { get; set; }
+		[DisplayName("Nombre")]
+		public string product_name { get; set; }
+		[DisplayName("Descripción")]
+		public string product_description { get; set; }
+		[DisplayName("Categoría")]
+		public Nullable<int> category_id { get; set; }
+		[DisplayName("Peso")]
+		public string weight_class { get; set; }
+		[DisplayName("Garantía")]
+		public Nullable<System.DateTime> warranty_period { get; set; }
+		[DisplayName("Proveedor")]
+		public Nullable<int> supplier_id { get; set; }
+		[DisplayName("Estátus")]
+		public string product_status { get; set; }
+		[DisplayName("Precio al público")]
+		public decimal list_price { get; set; }
+		[DisplayName("Precio mínimo")]
+		public decimal min_price { get; set; }
+		[DisplayName("Cat´logo")]
+		public string catalog_url { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Inventory> Inventories { get; set; }

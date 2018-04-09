@@ -11,8 +11,9 @@ namespace BDProject.Models
 {
     using System;
     using System.Collections.Generic;
-    
-    public partial class Department
+	using System.ComponentModel;
+
+	public partial class Department
     {
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
         public Department()
@@ -20,11 +21,15 @@ namespace BDProject.Models
             this.JobHistories = new HashSet<JobHistory>();
             this.Employees = new HashSet<Employee>();
         }
-    
-        public int department_id { get; set; }
-        public string department_name { get; set; }
-        public Nullable<int> manager_id { get; set; }
-        public Nullable<int> location_id { get; set; }
+
+		[DisplayName("Departamento")]
+		public int department_id { get; set; }
+		[DisplayName("Departamento")]
+		public string department_name { get; set; }
+		[DisplayName("Manager")]
+		public Nullable<int> manager_id { get; set; }
+		[DisplayName("Ubicación")]
+		public Nullable<int> location_id { get; set; }
     
         public virtual Location Location { get; set; }
         public virtual Employee Employee { get; set; }

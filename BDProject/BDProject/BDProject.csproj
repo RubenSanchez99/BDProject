@@ -151,8 +151,20 @@
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Controllers\CountriesController.cs" />
+    <Compile Include="Controllers\CustomersController.cs" />
+    <Compile Include="Controllers\DepartmentsController.cs" />
+    <Compile Include="Controllers\EmployeesController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\InventoriesController.cs" />
+    <Compile Include="Controllers\JobHistoriesController.cs" />
+    <Compile Include="Controllers\JobsController.cs" />
+    <Compile Include="Controllers\LocationsController.cs" />
+    <Compile Include="Controllers\OrderItemsController.cs" />
+    <Compile Include="Controllers\OrdersController.cs" />
+    <Compile Include="Controllers\ProductDescriptionsController.cs" />
+    <Compile Include="Controllers\ProductInformationsController.cs" />
     <Compile Include="Controllers\RegionsController.cs" />
+    <Compile Include="Controllers\WarehousesController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -222,6 +234,20 @@
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
     <Content Include="Content\Site.css" />
+    <Content Include="Images\Countries.jpeg" />
+    <Content Include="Images\Customers.jpg" />
+    <Content Include="Images\Departments.png" />
+    <Content Include="Images\Employees.jpeg" />
+    <Content Include="Images\Inventory.jpg" />
+    <Content Include="Images\Job.jpg" />
+    <Content Include="Images\JobHistory.jpg" />
+    <Content Include="Images\Location.jpg" />
+    <Content Include="Images\Order.png" />
+    <Content Include="Images\OrdersItem.jpg" />
+    <Content Include="Images\ProductDescription.png" />
+    <Content Include="Images\ProductInformation.jpg" />
+    <Content Include="Images\regions.jpg" />
+    <Content Include="Images\warehouse.jpg" />
     <Content Include="Models\Model.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
       <DependentUpon>Model.edmx</DependentUpon>
@@ -255,7 +281,9 @@
     <Content Include="Scripts\modernizr-2.6.2.js" />
     <Content Include="Scripts\respond.js" />
     <Content Include="Scripts\respond.min.js" />
-    <Content Include="Web.config" />
+    <Content Include="Web.config">
+      <SubType>Designer</SubType>
+    </Content>
     <Content Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </Content>
@@ -279,6 +307,66 @@
     <Content Include="Views\Countries\Details.cshtml" />
     <Content Include="Views\Countries\Edit.cshtml" />
     <Content Include="Views\Countries\Index.cshtml" />
+    <Content Include="Views\Departments\Create.cshtml" />
+    <Content Include="Views\Departments\Delete.cshtml" />
+    <Content Include="Views\Departments\Details.cshtml" />
+    <Content Include="Views\Departments\Edit.cshtml" />
+    <Content Include="Views\Departments\Index.cshtml" />
+    <Content Include="Views\Customers\Create.cshtml" />
+    <Content Include="Views\Customers\Delete.cshtml" />
+    <Content Include="Views\Customers\Details.cshtml" />
+    <Content Include="Views\Customers\Edit.cshtml" />
+    <Content Include="Views\Customers\Index.cshtml" />
+    <Content Include="Views\Employees\Create.cshtml" />
+    <Content Include="Views\Employees\Delete.cshtml" />
+    <Content Include="Views\Employees\Details.cshtml" />
+    <Content Include="Views\Employees\Edit.cshtml" />
+    <Content Include="Views\Employees\Index.cshtml" />
+    <Content Include="Views\Inventories\Create.cshtml" />
+    <Content Include="Views\Inventories\Delete.cshtml" />
+    <Content Include="Views\Inventories\Details.cshtml" />
+    <Content Include="Views\Inventories\Edit.cshtml" />
+    <Content Include="Views\Inventories\Index.cshtml" />
+    <Content Include="Views\JobHistories\Create.cshtml" />
+    <Content Include="Views\JobHistories\Delete.cshtml" />
+    <Content Include="Views\JobHistories\Details.cshtml" />
+    <Content Include="Views\JobHistories\Edit.cshtml" />
+    <Content Include="Views\JobHistories\Index.cshtml" />
+    <Content Include="Views\Jobs\Create.cshtml" />
+    <Content Include="Views\Jobs\Delete.cshtml" />
+    <Content Include="Views\Jobs\Details.cshtml" />
+    <Content Include="Views\Jobs\Edit.cshtml" />
+    <Content Include="Views\Jobs\Index.cshtml" />
+    <Content Include="Views\Locations\Create.cshtml" />
+    <Content Include="Views\Locations\Delete.cshtml" />
+    <Content Include="Views\Locations\Details.cshtml" />
+    <Content Include="Views\Locations\Edit.cshtml" />
+    <Content Include="Views\Locations\Index.cshtml" />
+    <Content Include="Views\OrderItems\Create.cshtml" />
+    <Content Include="Views\OrderItems\Delete.cshtml" />
+    <Content Include="Views\OrderItems\Details.cshtml" />
+    <Content Include="Views\OrderItems\Edit.cshtml" />
+    <Content Include="Views\OrderItems\Index.cshtml" />
+    <Content Include="Views\Orders\Create.cshtml" />
+    <Content Include="Views\Orders\Delete.cshtml" />
+    <Content Include="Views\Orders\Details.cshtml" />
+    <Content Include="Views\Orders\Edit.cshtml" />
+    <Content Include="Views\Orders\Index.cshtml" />
+    <Content Include="Views\ProductDescriptions\Create.cshtml" />
+    <Content Include="Views\ProductDescriptions\Delete.cshtml" />
+    <Content Include="Views\ProductDescriptions\Details.cshtml" />
+    <Content Include="Views\ProductDescriptions\Edit.cshtml" />
+    <Content Include="Views\ProductDescriptions\Index.cshtml" />
+    <Content Include="Views\ProductInformations\Create.cshtml" />
+    <Content Include="Views\ProductInformations\Delete.cshtml" />
+    <Content Include="Views\ProductInformations\Details.cshtml" />
+    <Content Include="Views\ProductInformations\Edit.cshtml" />
+    <Content Include="Views\ProductInformations\Index.cshtml" />
+    <Content Include="Views\Warehouses\Create.cshtml" />
+    <Content Include="Views\Warehouses\Delete.cshtml" />
+    <Content Include="Views\Warehouses\Details.cshtml" />
+    <Content Include="Views\Warehouses\Edit.cshtml" />
+    <Content Include="Views\Warehouses\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

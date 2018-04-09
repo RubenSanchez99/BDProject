@@ -11,17 +11,20 @@ namespace BDProject.Models
 {
     using System;
     using System.Collections.Generic;
-    
-    public partial class Region
+	using System.ComponentModel;
+
+	public partial class Region
     {
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
         public Region()
         {
             this.Countries = new HashSet<Country>();
         }
-    
-        public int region_id { get; set; }
-        public string region_name { get; set; }
+
+		[DisplayName("Región")]
+		public int region_id { get; set; }
+		[DisplayName("Nombre")]
+		public string region_name { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Country> Countries { get; set; }

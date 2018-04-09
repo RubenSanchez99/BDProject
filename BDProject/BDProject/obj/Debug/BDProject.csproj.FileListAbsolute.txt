@@ -99,3 +99,4 @@ C:\Users\Ruben\source\repos\BDProject\BDProject\BDProject\obj\Debug\BDProject.cs
 C:\Users\Ruben\source\repos\BDProject\BDProject\BDProject\obj\Debug\BDProject.csproj.CopyComplete
 C:\Users\Ruben\source\repos\BDProject\BDProject\BDProject\obj\Debug\BDProject.dll
 C:\Users\Ruben\source\repos\BDProject\BDProject\BDProject\obj\Debug\BDProject.pdb
+C:\Users\Ruben\source\repos\BDProject\BDProject\BDProject\obj\Debug\BDProject.csprojResolveAssemblyReference.cache

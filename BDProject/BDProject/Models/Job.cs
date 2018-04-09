@@ -11,8 +11,9 @@ namespace BDProject.Models
 {
     using System;
     using System.Collections.Generic;
-    
-    public partial class Job
+	using System.ComponentModel;
+
+	public partial class Job
     {
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
         public Job()
@@ -20,11 +21,15 @@ namespace BDProject.Models
             this.Employees = new HashSet<Employee>();
             this.JobHistories = new HashSet<JobHistory>();
         }
-    
-        public int job_id { get; set; }
-        public string job_title { get; set; }
-        public decimal min_salary { get; set; }
-        public decimal max_salary { get; set; }
+
+		[DisplayName("Puesto")]
+		public int job_id { get; set; }
+		[DisplayName("Puesto")]
+		public string job_title { get; set; }
+		[DisplayName("Salario mínimo")]
+		public decimal min_salary { get; set; }
+		[DisplayName("Salario máximo")]
+		public decimal max_salary { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Employee> Employees { get; set; }

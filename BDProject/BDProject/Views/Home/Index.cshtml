@@ -35,7 +35,7 @@
                 <div class="carousel-caption">
                     <h1 class="super-heading">@Html.ActionLink("Países", "Index", "Countries", null,
                                                 new { @class = "routeStyle" })</h1>
-                    <p class="super-paragraph">Lista de losPaises .</p>
+                    <p class="super-paragraph">Lista de paises</p>
                 </div>
             </div>
             <!-- slide 2 -->
@@ -43,8 +43,9 @@
                 <img src="~/Images/Customers.jpg" />
                 <div class="overlay"></div>
                 <div class="carousel-caption">
-                    <h1 class="super-heading">Cliente</h1>
-                    <p class="super-paragraph">Lista de clientes.</p>
+                    <h1 class="super-heading">@Html.ActionLink("Clientes", "Index", "Customers", null,
+                                                new { @class = "routeStyle" })</h1>
+                    <p class="super-paragraph">Lista de clientes</p>
                 </div>
             </div>
             <!-- slide 3 -->
@@ -52,8 +53,9 @@
                 <img src="~/Images/Departments.png" />
                 <div class="overlay"></div>
                 <div class="carousel-caption">
-                    <h1 class="super-heading">Departamentos</h1>
-                    <p class="super-paragraph">Lista de Departamentos.</p>
+                    <h1 class="super-heading">@Html.ActionLink("Departamentos", "Index", "Departments", null,
+                                                new { @class = "routeStyle" })</h1>
+                    <p class="super-paragraph">Lista de departamentos</p>
                 </div>
             </div>
             <!-- slide 4 -->
@@ -61,8 +63,9 @@
                 <img src="~/Images/Employees.jpeg" />
                 <div class="overlay"></div>
                 <div class="carousel-caption">
-                    <h1 class="super-heading">Empleados</h1>
-                    <p class="super-paragraph">Lista de empleados.</p>
+                    <h1 class="super-heading">@Html.ActionLink("Empleados", "Index", "Employees", null,
+                                                new { @class = "routeStyle" })</h1>
+                    <p class="super-paragraph">Lista de empleados</p>
                 </div>
             </div>
             <!-- slide 5 -->
@@ -70,8 +73,9 @@
                 <img src="~/Images/Inventory.jpg" />
                 <div class="overlay"></div>
                 <div class="carousel-caption">
-                    <h1 class="super-heading">Inventario</h1>
-                    <p class="super-paragraph">EL inventario de la organizacion.</p>
+                    <h1 class="super-heading">@Html.ActionLink("Inventarios", "Index", "Inventories", null,
+                                                new { @class = "routeStyle" })</h1>
+                    <p class="super-paragraph">Inventarios de la organizacion</p>
                 </div>
             </div>
             <!-- slide 6 -->
@@ -79,8 +83,9 @@
                 <img src="~/Images/Job.jpg" />
                 <div class="overlay"></div>
                 <div class="carousel-caption">
-                    <h1 class="super-heading">Trabajo</h1>
-                    <p class="super-paragraph">trabajos realizados.</p>
+                    <h1 class="super-heading">@Html.ActionLink("Puestos", "Index", "Jobs", null,
+                                                new { @class = "routeStyle" })</h1>
+                    <p class="super-paragraph">Puestos de la organización</p>
                 </div>
             </div>
 
@@ -89,8 +94,9 @@
                 <img src="~/Images/JobHistory.jpg" />
                 <div class="overlay"></div>
                 <div class="carousel-caption">
-                    <h1 class="super-heading">Historial de Trabajo</h1>
-                    <p class="super-paragraph">trabajos.</p>
+                    <h1 class="super-heading">@Html.ActionLink("Historial de puestos", "Index", "JobHistory", null,
+                                                new { @class = "routeStyle" })</h1>
+                    <p class="super-paragraph">Historial de puestos de la organización</p>
                 </div>
             </div>
 
@@ -100,10 +106,10 @@
                 <div class="overlay"></div>
                 <div class="carousel-caption">
                     <h1 class="super-heading">
-                        @Html.ActionLink("Locaciones", "Index", "Locations", null,
+                        @Html.ActionLink("Ubicaciones", "Index", "Locations", null,
             new { @class = "routeStyle" })
                     </h1>
-                    <p class="super-paragraph">COORDENADAS.</p>
+                    <p class="super-paragraph">Ubicaciones</p>
                 </div>
             </div>
 
@@ -112,8 +118,9 @@
                 <img src="~/Images/Order.png" />
                 <div class="overlay"></div>
                 <div class="carousel-caption">
-                    <h1 class="super-heading">Pedidos</h1>
-                    <p class="super-paragraph">Ordenes de compras.</p>
+                    <h1 class="super-heading">@Html.ActionLink("Ordenes de compra", "Index", "Orders", null,
+                                                new { @class = "routeStyle" })</h1>
+                    <p class="super-paragraph">Ordenes de compras</p>
                 </div>
             </div>
 
@@ -122,8 +129,9 @@
                 <img src="~/Images/OrdersItem.jpg" />
                 <div class="overlay"></div>
                 <div class="carousel-caption">
-                    <h1 class="super-heading">Articulo Pedido</h1>
-                    <p class="super-paragraph">Item solicitado en una orden de compra</p>
+                    <h1 class="super-heading">@Html.ActionLink("Artículos solicitados", "Index", "OrderItems", null,
+                                                new { @class = "routeStyle" })</h1>
+                    <p class="super-paragraph">Artículo solicitado en una orden de compra</p>
                 </div>
             </div>
 
@@ -133,10 +141,10 @@
                 <div class="overlay"></div>
                 <div class="carousel-caption">
                     <h1 class="super-heading">
-                        @Html.ActionLink("Descripcion Del producto", "Index", "ProductDescriptions", null,
+                        @Html.ActionLink("Descripcion de artículo", "Index", "ProductDescriptions", null,
            new { @class = "routeStyle" })
                     </h1>
-                    <p class="super-paragraph">Descripciones.</p>
+                    <p class="super-paragraph">Desripciones de artículos</p>
                 </div>
             </div>
 
@@ -145,10 +153,10 @@
                 <img src="~/Images/ProductInformation.jpg" />
                 <div class="overlay"></div>
                 <div class="carousel-caption">
-                    <h1 class="super-heading">@Html.ActionLink("InformacionesDeProducto", "Index", "ProductInformations", null,
+                    <h1 class="super-heading">@Html.ActionLink("Información de artículo", "Index", "ProductInformations", null,
                                                  new { @class = "routeStyle" })
                     </h1>
-                    <p class="super-paragraph">Infos.</p>
+                    <p class="super-paragraph">Información sobre artículos.</p>
                 </div>
             </div>
 
@@ -161,8 +169,7 @@
                         @Html.ActionLink("Regiones", "Index", "Regions", null,
             new { @class = "routeStyle" })
                                     </h1>
-                    <p class="super-paragraph">Subdivision De La
-                    Empresa.</p>
+                    <p class="super-paragraph">Subdivision de la organización</p>
                 </div>
             </div>
 
@@ -171,8 +178,9 @@
                 <img src="~/Images/warehouse.jpg" />
                 <div class="overlay"></div>
                 <div class="carousel-caption">
-                    <h1 class="super-heading">Deposito</h1>
-                    <p class="super-paragraph">Deposito de todo el inventario.</p>
+                    <h1 class="super-heading">@Html.ActionLink("Almacenes", "Index", "Warehouses", null,
+                                                new { @class = "routeStyle" })</h1>
+                    <p class="super-paragraph">Almacenes de la organización</p>
                 </div>
             </div>
 

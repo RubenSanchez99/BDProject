@@ -11,8 +11,9 @@ namespace BDProject.Models
 {
     using System;
     using System.Collections.Generic;
-    
-    public partial class Location
+	using System.ComponentModel;
+
+	public partial class Location
     {
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
         public Location()
@@ -20,15 +21,21 @@ namespace BDProject.Models
             this.Departments = new HashSet<Department>();
             this.Warehouses = new HashSet<Warehouse>();
         }
-    
-        public int location_id { get; set; }
-        public string street_address { get; set; }
-        public string postal_code { get; set; }
-        public string city { get; set; }
-        public string state_province { get; set; }
-        public Nullable<int> country_id { get; set; }
-    
-        public virtual Country Country { get; set; }
+
+		[DisplayName("Ubicación")]
+		public int location_id { get; set; }
+		[DisplayName("Dirección")]
+		public string street_address { get; set; }
+		[DisplayName("Código postal")]
+		public string postal_code { get; set; }
+		[DisplayName("Ciudad")]
+		public string city { get; set; }
+		[DisplayName("Estado")]
+		public string state_province { get; set; }
+		[DisplayName("País")]
+		public Nullable<int> country_id { get; set; }
+		
+		public virtual Country Country { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Department> Departments { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]

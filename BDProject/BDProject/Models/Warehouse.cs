@@ -11,23 +11,30 @@ namespace BDProject.Models
 {
     using System;
     using System.Collections.Generic;
-    
-    public partial class Warehouse
+	using System.ComponentModel;
+
+	public partial class Warehouse
     {
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
         public Warehouse()
         {
             this.Inventories = new HashSet<Inventory>();
         }
-    
-        public int warehouse_id { get; set; }
-        public string warehouse_spec { get; set; }
-        public string warehouse_name { get; set; }
-        public Nullable<int> location_id { get; set; }
-        public System.Data.Entity.Spatial.DbGeography wh_geo_location { get; set; }
+
+		[DisplayName("Almacén")]
+		public int warehouse_id { get; set; }
+		[DisplayName("Especificación")]
+		public string warehouse_spec { get; set; }
+		[DisplayName("Nombre")]
+		public string warehouse_name { get; set; }
+		[DisplayName("Ubicación")]
+		public Nullable<int> location_id { get; set; }
+		[DisplayName("Ubicación geográfica")]
+		public System.Data.Entity.Spatial.DbGeography wh_geo_location { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Inventory> Inventories { get; set; }
-        public virtual Location Location { get; set; }
+		[DisplayName("Ubicación")]
+		public virtual Location Location { get; set; }
     }
 }
