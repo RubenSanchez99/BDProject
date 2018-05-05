@@ -150,6 +150,7 @@
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="Controllers\BackupController.cs" />
     <Compile Include="Controllers\CountriesController.cs" />
     <Compile Include="Controllers\CustomersController.cs" />
     <Compile Include="Controllers\DepartmentsController.cs" />
@@ -164,6 +165,7 @@
     <Compile Include="Controllers\ProductDescriptionsController.cs" />
     <Compile Include="Controllers\ProductInformationsController.cs" />
     <Compile Include="Controllers\RegionsController.cs" />
+    <Compile Include="Controllers\RestoreController.cs" />
     <Compile Include="Controllers\WarehousesController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
@@ -367,6 +369,8 @@
     <Content Include="Views\Warehouses\Details.cshtml" />
     <Content Include="Views\Warehouses\Edit.cshtml" />
     <Content Include="Views\Warehouses\Index.cshtml" />
+    <Content Include="Views\Backup\Backup.cshtml" />
+    <Content Include="Views\Restore\Restore.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
